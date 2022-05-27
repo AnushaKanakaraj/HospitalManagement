@@ -1,0 +1,101 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4 col-xl-4">
+            <div class="card bg-c-blue db-card">
+                <div class="card-block">
+                    <h5 class="m-b-20">Patients</h5>
+                    <h3 class="text-end"><i class="fa fa-person float-start"></i><span>@Model.PatientCount</span></h3>
+                    <p class="m-b-0">Active <span class="f-right"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-4">
+            <div class="card bg-c-green db-card">
+                <div class="card-block">
+                    <h5 class="m-b-20">Vaccinated Patients</h5>
+                    <h3 class="text-end"><i class="fa fa-building float-start"></i><span>@Model.VaccinatedCount</span></h3>
+                    <p class="m-b-0">Active <span class="float-end"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-4">
+            <div class="card bg-c-pink db-card">
+                <div class="card-block">
+                    <h5 class="m-b-20">Covid Positive</h5>
+                    <h3 class="text-end"><i class="fa fa-graduation-cap float-start"></i><span>@Model.CovidPositiveCount</span></h3>
+                    <p class="m-b-0">Covid Negative<span class="float-end">@Model.CovidNegativeCount</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome To eNoah Hospital ManageMent</h1>
+    </div>
+
+}
+else
+{
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome To eNoah Hospital Management</h1>
+    </div>
+    <br />
+    <br />
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <a href="/Login" class="btn btn-info col-sm-6" role="button">Login</a>
+
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row text-center">
+            <div class="col-sm-3"></div>
+            <div class="col-6">
+
+                <a href="/Patients/Register" class="btn btn-primary col-sm-6" role="button">Register Here</a>
+            </div>
+        </div>
+    </div>
+
+
+}
+<h4>@Model.ErrorMessage</h4>
+<div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

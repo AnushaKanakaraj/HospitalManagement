@@ -1,0 +1,25 @@
+﻿@page "{id}"
+@model HospitalManagement.Pages.Medicines.EditModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <div class="col-sm-6">
+            <label asp-for="@Model.VaccineName"></label>
+            <input type ="text" asp-for="@Model.VaccineName" readonly class="form-select" />
+        </div>
+
+        <div class="col-sm-6">
+            <label asp-for="@Model.Status"></label>
+            <select asp-for="@Model.Status" asp-items="@Model.Statuses" class="form-select"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a href="/Medicines/List" class="btn btn-default" role="button">Cancel</a>
+        </div>
+    </div>
+     <h6 class="text-success">@Model.SuccessMessage</h6>
+        <h6 class="text-danger">@Model.ErrorMessage</h6>
+</form>

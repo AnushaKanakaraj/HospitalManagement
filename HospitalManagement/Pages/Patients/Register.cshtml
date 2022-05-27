@@ -1,0 +1,81 @@
+﻿@page
+@model HospitalManagement.Pages.Patient.AddModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <div >
+            <h3 class="text-center">Register Here</h3>
+        </div>
+    </div>
+
+     <div class="row gx-0">
+        <div class="form-group col ms-2 ">
+            <label asp-for="@Model.FirstName"></label>
+            <input asp-for="@Model.FirstName" class="form-control" />
+        </div>
+        <div class="form-group col ms-2">
+            <label asp-for="@Model.LastName"></label>
+            <input asp-for="@Model.LastName" class="form-control" />
+        </div>
+        
+    </div>
+
+    <div class="row gx-0">
+        <div class="form-group col ms-2 ">
+             <label asp-for="@Model.Gender"></label><br>
+            @foreach(var g in Model.Genders)
+            {
+               
+ 
+                 <input type="radio" asp-for="@Model.Gender" value="@g" />@g
+            }
+           
+           
+        </div>
+        <div class="form-group col ms-2">
+            <label asp-for="@Model.Dob"></label>
+            <input type="Date" asp-for="@Model.Dob" class="form-control" />
+        </div>
+        
+    </div>
+
+     <div class="row gx-0">
+        <div class="form-group col ms-2 ">
+            <label asp-for="@Model.AadharNo"></label>
+            <input type="text" asp-for="@Model.AadharNo" class="form-control" />
+        </div>
+        <div class="form-group col ms-2">
+            <label asp-for="@Model.MobileNumber"></label>
+            <input type="number" asp-for="@Model.MobileNumber" class="form-control" />
+        </div>
+        
+    </div>
+
+    <div class="row gx-0">
+        <div class="form-group col ms-2 ">
+            <label asp-for="@Model.Street"></label>
+            <input type="text" asp-for="@Model.Street" class="form-control" />
+        </div>
+        <div class="form-group col ms-2">
+            <label asp-for="@Model.City"></label>
+            <input type="text" asp-for="@Model.City" class="form-control" />
+        </div>
+        <div class="form-group col ms-2">
+            <label asp-for="@Model.State"></label>
+            <input type="text" asp-for="@Model.State" class="form-control" />
+        </div>
+        
+    </div>
+
+     <div class="row gx-0">
+        <button type="submit" class="col btn btn-success me-3 mt-3">Register</button>
+        <a href="/Index" class="col btn btn-danger border-secondary ms-3 mt-3" role="button">Cancel</a>
+    </div>
+     <div class="form-group">
+        <h5 class="text-success">@Model.SuccessMessage</h5>
+        <h5 class="text-success">@Model.ErrorMessage</h5>
+        <h6 class="text-danger">@Html.ValidationSummary()</h6>
+
+    </div>
+</form>

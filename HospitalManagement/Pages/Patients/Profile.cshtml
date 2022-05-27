@@ -1,0 +1,85 @@
+﻿@page
+@model HospitalManagement.Pages.Patients.ProfileModel
+@{
+}
+<form method="post">
+
+
+    <div class="row">
+        <h2> My Profile </h2>
+        <div class="col">
+            <a href="/Patients/Result/@Model.Profile.Id" class="btn btn-outline-success col-sm-4"> <i class="fa fa-resut"></i>Covid Result</a>
+        </div
+        
+
+       
+        <div class="col">
+            <a href="/Patients/VaccineResult/@Model.Profile.Id" class="btn btn-outline-success col-sm-4"> <i class="fa fa-result"></i>Vaccine Result</a>
+        </div>
+    </div>
+
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Dob</th>
+                <th scope="col">MobileNumber</th>
+                <th scope="col">Aadhar Number</th>
+                <th scope="col">State</th>
+                <th scope="col">City</th>
+                <th scope="col">Street</th>
+                @*<th scope="col">Action</th>*@
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <tr>
+                <td>@Model.Profile.Id</td>
+                <td>@Model.Profile.FirstName</td>
+                <td>@Model.Profile.LastName</td>
+                <td>@Model.Profile.Gender</td>
+                <td>@Model.Profile.Dob.ToString("yyyy-MM-dd")</td>
+                <td>@Model.Profile.MobileNumber</td>
+                <td>@Model.Profile.AadharNo</td>
+                <td>@Model.Profile.State</td>
+                <td>@Model.Profile.City</td>
+                <td>@Model.Profile.Street</td>
+
+
+
+            </tr>
+
+        </tbody>
+
+    </table>
+    <div class="col-sm-8">
+        
+    </div>
+    <div>
+
+    </div>
+    <div class="col-sm-8">
+        
+    </div>
+
+    <div class="row gx-0">
+        @if(Model.ShowTestButton)
+        {
+             <td> <a href="/Patients/CovidRegister/@Model.Profile.Id" class="btn btn-outline-primary"> <i class="fa fa-Register"></i>Register for covid test </a> </td>
+        }
+       
+        <td> </td>
+        @if(Model.ShowVaccineButton)
+        {
+            <td> <a href="/Patients/VaccineRegistration/@Model.Profile.Id" class="btn btn-outline-warning"> <i class="fa fa-Register"></i>Register for Vaccination </a></td>
+        }
+        
+    </div>
+</form>

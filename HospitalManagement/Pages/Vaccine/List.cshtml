@@ -1,0 +1,73 @@
+﻿@page
+@model HospitalManagement.Pages.Vaccine.ListModel
+@{
+}
+
+ 
+         
+         <h2 class="text-center"> Vaccination Record</h2>
+    
+          
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th scope="col">CovidId</th>
+                <th scope="col">PatientId</th>
+                <th scope="col">HospitalId</th>*@
+                <th scope="col">FirstName</th>
+                
+                <th scope="col">Aadhar Number</th>
+                <th scope="col">MobileNumber</th>
+                <th scope="col">Gender</th>
+                
+                
+                <th scope="col">State</th>
+                <th scope="col">HospitalName</th>
+                <th scope="col">VaccineName</th>
+                <th scope="col">AppointmentDate</th>
+                <th scope="col">Vaccinated Date</th>
+                
+                <th scope="col">Status</th>
+               
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var c in @Model.VaccineRecords)
+            {
+                <tr>
+                    @*<td>@c.Id</td>
+                    <td>@c.PatientId</td>
+                    <td>@c.HospitalId</td>*@
+                    <td>@c.FirstName</td>
+                    <td>@c.AadharNo</td>
+                    <td>@c.MobileNumber</td>
+                    
+                    <td>@c.Gender</td>
+                    
+                    <td>@c.State</td>
+                    <td>@c.HospitalName</td>
+                    <td>@c.VaccineName</td>
+                    <td>@c.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                    <td>@c.VaccinatedDate?.ToString("yyyy-MM-dd")</td>
+                    <td>@c.Status</td>
+                    @if (c.VaccinatedDate == null)
+                    {
+                        <td><a href="/Vaccine/Edit/@c.Id" class="btn btn-primary"> <i class="fa fa-edit">Update</i> </a> </td>
+                    }
+                    
+                    
+                    
+                    
+                    
+         
+                    
+                    
+                </tr>
+            }
+        </tbody>
+
+    </table>

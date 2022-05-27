@@ -1,0 +1,73 @@
+﻿@page
+@model HospitalManagement.Pages.Covids.ListModel
+@{
+}
+
+ 
+         
+         <h2> Covid Record</h2>
+    
+     
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+               @* <th scope="col">CovidId</th>
+                <th scope="col">PatientId</th>
+                <th scope="col">HospitalId</th>*@
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Aadhar Number</th>
+                <th scope="col">MobileNumber</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Street</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">HospitalName</th>
+                <th scope="col">AppointmentDate</th>
+                <th scope="col">Status</th>
+                <th scope="col">Result</th>
+                
+               
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var c in @Model.CovidPatients)
+            {
+                <tr>
+                    @*<td>@c.Id</td>
+                    <td>@c.PatientId</td>
+                    <td>@c.HospitalId</td>*@
+                    <td>@c.FirstName</td>
+                    <td>@c.LastName</td>
+                    <td>@c.AadharNo</td>
+                    <td>@c.MobileNumber</td>
+                    <td>@c.Gender</td>
+                    <td>@c.Street</td>
+                    <td>@c.City</td>
+                    <td>@c.State</td>
+                    <td>@c.HospitalName</td>
+                    <td>@c.AppointmentDate</td>
+                    <td>@c.Status</td>
+                    <td>@c.Result</td>
+                    @if (c.Result == null)
+                    {
+                        <td><a href="/Covids/Edit/@c.Id" class="btn btn-primary"> <i class="fa fa-edit"></i> </a> </td>
+                    }
+                    
+                    
+                    
+                    
+                    
+         
+                    
+                    
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</>

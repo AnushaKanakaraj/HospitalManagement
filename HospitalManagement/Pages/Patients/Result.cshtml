@@ -1,0 +1,58 @@
+﻿@page "{id}"
+@model HospitalManagement.Pages.Patients.ResultModel
+@{
+}
+<form method="post" class="shadow">
+ <h2> Covid Result</h2>
+         <h6 class="text-danger">@Html.ValidationSummary()</h6>
+    </div>
+     
+    
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Gender</th>
+                <th scope="col">City</th>
+                <th scope="col">Street</th>
+                <th scope="col">MobileNumber</th>
+                <th scope="col">Aadhar Number</th>
+                <th scope="col">HospitalName</th>
+                <th scope="col">AppointmentDate</th>
+                <th scope="col">Result</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+           
+            
+                <tr>
+                    
+                    <td>@Model.result.FirstName</td>
+                    <td>@Model.result.LastName</td>
+                    <td>@Model.result.Gender</td>
+                    <td>@Model.result.City</td>
+                     <td>@Model.result.Street</td>
+                    <td>@Model.result.MobileNumber</td>
+                    <td>@Model.result.AadharNo</td>
+                    <td>@Model.result.HospitalName</td>
+                     <td>@Model.result.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                    <td>@Model.result.Result</td>
+                    
+                   
+                    
+                    
+                </tr>
+            
+        </tbody>
+          
+    </table>
+     <div class="col-sm-6">
+                    <a href="/Patients/Profile" class="btn btn-danger col-sm-6" role="button">Back</a>
+                </div>
+</form>
